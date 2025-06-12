@@ -20,7 +20,7 @@ public class RacaoApplication {
     }
 
     public RacaoEntity save(Racao racao){
-        return racaoRepository.save(RacaoFactory.criarRacao(racao));
+        return racaoRepository.save(RacaoFactory.criarRacao(racao.validate()));
     }
 
     public RacaoEntity update(Long id, Racao racao){

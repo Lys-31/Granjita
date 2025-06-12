@@ -14,4 +14,19 @@ public class Lote {
     private String codigo;
     private LocalDate dataEntrada;
     private LocalDate dataPrevisaoSaida;
+
+    public Lote validate() {
+        if (this.dataEntrada == null) {
+            throw new IllegalArgumentException("dataEntrada nao pode ser nulo");
+        }
+
+        if (this.dataPrevisaoSaida == null) {
+            throw new IllegalArgumentException("dataPrevisaoSaida nao pode ser nulo");
+        }
+
+        if (this.codigo == null) {
+            throw new IllegalArgumentException("codigo nao pode ser nulo");
+        }
+        return this;
+    }
 }

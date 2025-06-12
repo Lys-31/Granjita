@@ -11,4 +11,12 @@ public class FornecedorFactory {
                 .build();
     }
 
+    public static Fornecedor criarFornecedor(FornecedorEntity fornecedor) {
+        return Fornecedor.builder()
+                .id(fornecedor.getId())
+                .nome(fornecedor.getNome())
+                .contato(fornecedor.getContato())
+                .build();
+    }
+
 }

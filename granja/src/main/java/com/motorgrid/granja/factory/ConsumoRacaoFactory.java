@@ -12,4 +12,13 @@ public class ConsumoRacaoFactory {
                 .build();
     }
 
+    public static ConsumoRacao criarConsumoRacao(ConsumoRacaoEntity consumoRacaoEntity) {
+        return ConsumoRacao.builder()
+                .id(consumoRacaoEntity.getId())
+                .lote(LoteFactory.criarLote(consumoRacaoEntity.getLoteEntity()))
+                .data(consumoRacaoEntity.getData())
+                .quantidadeKg(consumoRacaoEntity.getQuantidadeKg())
+                .build();
+    }
+
 }

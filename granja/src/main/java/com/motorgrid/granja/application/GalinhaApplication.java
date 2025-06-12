@@ -20,7 +20,7 @@ public class GalinhaApplication {
     }
 
     public GalinhaEntity save(Galinha galinha){
-        return galinhaRepository.save(GalinhaFactory.criarGalinha(galinha));
+        return galinhaRepository.save(GalinhaFactory.criarGalinha(galinha.validate()));
     }
 
     public GalinhaEntity update(Long id, Galinha galinha){

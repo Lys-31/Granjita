@@ -20,8 +20,10 @@ public class TarefaApplication {
     }
 
     public TarefaEntity save(Tarefa tarefa){
-        return tarefaRepository.save(TarefaFactory.criarTarefa(tarefa));
+
+        return tarefaRepository.save(TarefaFactory.criarTarefa(tarefa.validate()));
     }
+
 
     public TarefaEntity update(Long id, Tarefa tarefa){
         TarefaEntity novo = TarefaFactory.criarTarefa(tarefa);

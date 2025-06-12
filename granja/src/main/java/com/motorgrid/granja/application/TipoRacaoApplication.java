@@ -20,13 +20,23 @@ public class TipoRacaoApplication {
     }
 
     public TipoRacaoEntity save(TipoRacao tipoRacao){
-        return tipoRacaoRepository.save(TipoRacaoFactory.criarTipoRacao(tipoRacao));
+        isExist(tipoRacao);
+        return tipoRacaoRepository.save(TipoRacaoFactory.criarTipoRacao(tipoRacao.validate()));
+    }
+    private void isExist(TipoRacao tipoRacao){
+        if(tipoRacaoRepository.findByNome(tipoRacao.getNome()) != null){
+            throw new IllegalArgumentException("Tipo de racao ja cadastrado");
+        }
     }
 
     public TipoRacaoEntity update(Long id, TipoRacao tipoRacao){
         TipoRacaoEntity novo = TipoRacaoFactory.criarTipoRacao(tipoRacao);
         novo.setId(id);
         return tipoRacaoRepository.save(novo);
+    }
+
+    public TipoRacaoEntity findByNome(String nome){
+       return tipoRacaoRepository.findByNome(nome);
     }
 
     public TipoRacaoEntity findById(Long id){

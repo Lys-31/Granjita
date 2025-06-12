@@ -30,6 +30,9 @@ public class FuncionarioFacade {
         return FuncionarioApplication.findById(id);
     }
 
+    public FuncionarioEntity findByEmail(String id) {
+        return FuncionarioApplication.findByEmail(id);
+    }
     public List<FuncionarioEntity> findAll() {
         return FuncionarioApplication.findAll();
     }

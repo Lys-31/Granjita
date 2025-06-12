@@ -37,4 +37,8 @@ public class TipoRacaoFacade {
     public void delete(Long id) {
         TipoRacaoApplication.delete(id);
     }
+
+    public TipoRacaoEntity findByNome(String nome){
+       return TipoRacaoApplication.findByNome(nome);
+    }
 }

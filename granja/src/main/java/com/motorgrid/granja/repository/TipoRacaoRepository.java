@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 @Transactional
 public interface TipoRacaoRepository extends JpaRepository<TipoRacaoEntity, Long> {
-    
+   TipoRacaoEntity findByNome(String nome);
 }

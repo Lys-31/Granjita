@@ -12,4 +12,13 @@ public class ColetaOvosFactory {
                 .build();
     }
 
+    public static ColetaOvos criarColetaOvos(ColetaOvosEntity coletaOvosEntity) {
+        return ColetaOvos.builder()
+                .id(coletaOvosEntity.getId())
+                .lote(LoteFactory.criarLote(coletaOvosEntity.getLoteEntity()))
+                .data(coletaOvosEntity.getData())
+                .quantidade(coletaOvosEntity.getQuantidade())
+                .build();
+    }
+
 }

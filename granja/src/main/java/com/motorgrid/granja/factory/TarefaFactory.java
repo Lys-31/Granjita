@@ -10,4 +10,12 @@ public class TarefaFactory {
                 .frequencia(tarefa.getFrequencia())
                 .build();
     }
+
+    public static Tarefa criarTarefa(TarefaEntity tarefa) {
+        return Tarefa.builder()
+                .id(tarefa.getId())
+                .descricao(tarefa.getDescricao())
+                .frequencia(tarefa.getFrequencia())
+                .build();
+    }
 }

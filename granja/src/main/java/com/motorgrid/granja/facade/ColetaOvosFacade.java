@@ -28,6 +28,10 @@ public class ColetaOvosFacade {
         return coletaOvosApplication.update(id, coletaOvos);
     }
 
+    public List<ColetaOvosEntity> findByLoteEntity(Long id){
+        return coletaOvosApplication.findByLoteEntity(id);
+    }
+
     public ColetaOvosEntity findById(Long id) {
         return coletaOvosApplication.findById(id);
     }

@@ -20,7 +20,7 @@ public class LoteApplication {
     }
 
     public LoteEntity save(Lote lote){
-        return loteRepository.save(LoteFactory.criarLote(lote));
+        return loteRepository.save(LoteFactory.criarLote(lote.validate()));
     }
 
     public LoteEntity update(Long id, Lote lote){

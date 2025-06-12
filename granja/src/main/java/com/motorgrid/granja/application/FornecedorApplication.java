@@ -20,7 +20,7 @@ public class FornecedorApplication {
     }
 
     public FornecedorEntity save(Fornecedor fornecedor){
-        return fornecedorRepository.save(FornecedorFactory.criarFornecedor(fornecedor));
+        return fornecedorRepository.save(FornecedorFactory.criarFornecedor(fornecedor.validate()));
     }
 
     public FornecedorEntity update(Long id, Fornecedor fornecedor){

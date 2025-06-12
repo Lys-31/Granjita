@@ -11,4 +11,13 @@ public class LoteFactory {
                 .dataPrevisaoSaida(lote.getDataPrevisaoSaida())
                 .build();
     }
+
+    public static Lote criarLote(LoteEntity loteEntity) {
+        return Lote.builder()
+                .id(loteEntity.getId())
+                .codigo(loteEntity.getCodigo())
+                .dataEntrada(loteEntity.getDataEntrada())
+                .dataPrevisaoSaida(loteEntity.getDataPrevisaoSaida())
+                .build();
+    }
 }

@@ -20,7 +20,7 @@ public class GalpaoApplication {
     }
 
     public GalpaoEntity save(Galpao galpao){
-        return galpaoRepository.save(GalpaoFactory.criarGalpao(galpao));
+        return galpaoRepository.save(GalpaoFactory.criarGalpao(galpao.validate()));
     }
 
     public GalpaoEntity update(Long id, Galpao galpao){

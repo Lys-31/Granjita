@@ -28,4 +28,6 @@ public class TarefaEntity {
 
     @Column(name = "frequencia")
     private String frequencia;
+
+    
 }

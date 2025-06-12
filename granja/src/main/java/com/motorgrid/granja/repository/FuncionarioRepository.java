@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 @Transactional
 public interface FuncionarioRepository extends JpaRepository<FuncionarioEntity, Long> {
-   
+   public FuncionarioEntity findByEmail(String email);
 }

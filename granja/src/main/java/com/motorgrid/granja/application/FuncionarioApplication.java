@@ -1,14 +1,15 @@
 
 package com.motorgrid.granja.application;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import com.motorgrid.granja.entity.FuncionarioEntity;
 import com.motorgrid.granja.factory.FuncionarioFactory;
 import com.motorgrid.granja.model.Funcionario;
 import com.motorgrid.granja.repository.FuncionarioRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
-import java.util.List;
 
 @Component
 public class FuncionarioApplication {
@@ -20,6 +21,8 @@ public class FuncionarioApplication {
     }
 
     public FuncionarioEntity save(Funcionario funcionario){
+        if (funcionarioRepository.findByEmail(funcionario.getEmail()) != null) throw new RuntimeException("Já existe um funcionário com este email");
+        
         return funcionarioRepository.save(FuncionarioFactory.criarFuncionario(funcionario));
     }
 
@@ -35,6 +38,9 @@ public class FuncionarioApplication {
 
     public List<FuncionarioEntity> findAll(){
         return funcionarioRepository.findAll();
+    }
+    public FuncionarioEntity findByEmail(String email){
+        return funcionarioRepository.findByEmail(email);
     }
 
     public void delete(Long id){

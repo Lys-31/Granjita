@@ -7,6 +7,5 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 
 public interface GetUserService extends JpaRepository<FuncionarioEntity, String> {
-    
     UserDetails findByEmail(String login);
 }

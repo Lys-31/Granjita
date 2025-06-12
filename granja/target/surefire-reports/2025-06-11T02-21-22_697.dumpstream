@@ -1,5 +1,0 @@
-# Created at 2025-06-11T02:21:22.848
-Boot Manifest-JAR contains absolute paths in classpath 'D:\GranjaNet\granja\target\test-classes'
-Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
-'other' has different root
-

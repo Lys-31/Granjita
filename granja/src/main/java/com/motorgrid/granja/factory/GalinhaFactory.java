@@ -11,4 +11,13 @@ public class GalinhaFactory {
                 .statusSaude(galinha.getStatusSaude())
                 .build();
     }
+
+    public static Galinha criarGalinha(GalinhaEntity galinha) {
+        return Galinha.builder()
+                .id(galinha.getId())
+                .identificacao(galinha.getIdentificacao())
+                .dataNascimento(galinha.getDataNascimento())
+                .statusSaude(galinha.getStatusSaude())
+                .build();
+    }
 }

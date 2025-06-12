@@ -10,4 +10,12 @@ public class TipoRacaoFactory {
                 .proteinaPct(tipoRacao.getProteinaPct())
                 .build();
     }
+
+    public static TipoRacao criarTipoRacao(TipoRacaoEntity tipoRacaoEntity) {
+        return TipoRacao.builder()
+                .id(tipoRacaoEntity.getId())
+                .nome(tipoRacaoEntity.getNome())
+                .proteinaPct(tipoRacaoEntity.getProteinaPct())
+                .build();
+    }
 }

@@ -11,4 +11,13 @@ public class GalpaoFactory {
                 .build();
     }
    
+
+    public static Galpao criarGalpao(GalpaoEntity galpaoEntity) {
+        return Galpao.builder()
+            
+                .id(galpaoEntity.getId())
+                .nome(galpaoEntity.getNome())
+                .capacidadeMaxima(galpaoEntity.getCapacidadeMaxima())
+                .build();
+    }
 }

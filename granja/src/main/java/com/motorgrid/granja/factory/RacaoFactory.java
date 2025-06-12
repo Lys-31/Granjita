@@ -9,6 +9,16 @@ public class RacaoFactory {
          return RacaoEntity.builder()
                  .quantidadeKg(racao.getQuantidadeKg())
                  .fornecedor(racao.getFornecedor())
+                 .tipoRacaoEntity(TipoRacaoFactory.criarTipoRacao(racao.getTipoRacao()))
+                 .build();
+     }
+
+     public static Racao criarRacao(RacaoEntity racao) {
+         return Racao.builder()
+                 .id(racao.getId())
+                 .quantidadeKg(racao.getQuantidadeKg())
+                 .tipoRacao(TipoRacaoFactory.criarTipoRacao(racao.getTipoRacaoEntity()))
+                 .fornecedor(racao.getFornecedor())
                  .build();
      }
 }

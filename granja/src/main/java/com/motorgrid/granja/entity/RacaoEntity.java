@@ -1,11 +1,6 @@
 package com.motorgrid.granja.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -28,4 +23,8 @@ public class RacaoEntity {
 
     @Column(name = "fornecedor")
     private String fornecedor;
+
+    @ManyToOne
+    @JoinColumn(name = "id_tipo_racao")
+    private TipoRacaoEntity tipoRacaoEntity;
 }
